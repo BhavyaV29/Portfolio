@@ -2,16 +2,16 @@ export default function Skills() {
   const skillsData = [
     {
       category: 'Languages',
-      items: ['Go', 'Python', 'C', 'SQL']
+      items: ['Go', 'Python', 'C', 'SQL'],
     },
     {
-      category: 'Tools & Frameworks',
-      items: ['PostgreSQL', 'SQLC', 'Goose', 'JWT', 'bcrypt', 'Docker', 'Git', 'VS Code']
+      category: 'Backend & Data',
+      items: ['REST APIs', 'PostgreSQL', 'Redis', 'MongoDB', 'SQLC', 'Goose', 'FastAPI', 'JWT', 'bcrypt'],
     },
     {
-      category: 'Domains',
-      items: ['Backend Development', 'Systems Programming', 'Machine Learning']
-    }
+      category: 'Infra & Tools',
+      items: ['Docker', 'Kubernetes', 'Linux', 'Git'],
+    },
   ]
 
   return (
@@ -24,11 +24,14 @@ export default function Skills() {
               <h3 className="text-lg font-semibold mb-6 text-muted-foreground uppercase tracking-wide">
                 {section.category}
               </h3>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-wrap gap-2">
                 {section.items.map((skill) => (
-                  <div key={skill} className="text-foreground">
+                  <span
+                    key={skill}
+                    className="text-sm px-3 py-1 bg-secondary/50 text-secondary-foreground rounded"
+                  >
                     {skill}
-                  </div>
+                  </span>
                 ))}
               </div>
             </div>

@@ -47,7 +47,13 @@ export default function Contact() {
           <h2 className="text-4xl font-bold mb-6 text-balance">Get in Touch</h2>
           <div className="space-y-4 text-muted-foreground">
             <p>
-              <span className="font-medium text-foreground">Email:</span> bhavyavashisht119@gmail.com
+              <span className="font-medium text-foreground">Email:</span>{' '}
+              <a
+                href="mailto:bhavyavashisht119@gmail.com"
+                className="hover:text-foreground transition-colors underline underline-offset-4"
+              >
+                bhavyavashisht119@gmail.com
+              </a>
             </p>
             <p>
               <span className="font-medium text-foreground">Location:</span> Delhi NCR

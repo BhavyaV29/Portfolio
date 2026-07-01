@@ -2,40 +2,36 @@ export default function Projects() {
   const projects = [
     {
       title: 'Chirpy',
-      subtitle: 'Deployed Backend API',
-      description: 'A production-style Go backend for a microblogging platform with JWT authentication, PostgreSQL, SQLC, Goose migrations, and structured middleware.',
-      tech: ['Go', 'PostgreSQL', 'SQLC', 'JWT'],
-      links: [
-        { label: 'GitHub', url: 'https://github.com/BhavyaV29/chirpy' }
-      ]
+      subtitle: 'Backend REST API · Go',
+      description:
+        'A production-style microblogging API in Go: JWT auth with refresh-token rotation, bcrypt-hashed passwords, a type-safe SQLC data layer over PostgreSQL, Goose migrations, and a Polka webhook for premium upgrades.',
+      tech: ['Go', 'PostgreSQL', 'SQLC', 'JWT', 'bcrypt', 'Webhooks'],
+      links: [{ label: 'GitHub', url: 'https://github.com/BhavyaV29/chirpy' }],
+    },
+    {
+      title: 'CLI-Agent',
+      subtitle: 'AI Coding Agent · Python',
+      description:
+        'A Python CLI agent that reads, patches, and runs code autonomously using Gemini function-calling in a plan–act–observe loop, capped at five iterations per task.',
+      tech: ['Python', 'Gemini API', 'Function Calling', 'Agent Loop'],
+      links: [{ label: 'GitHub', url: 'https://github.com/BhavyaV29/CLI-Agent' }],
     },
     {
       title: 'Gator',
-      subtitle: 'Go CLI Tool',
-      description: 'A command-line RSS/Atom feed aggregator with user management and feed following. Uses PostgreSQL for persistent storage.',
-      tech: ['Go', 'PostgreSQL', 'SQLC'],
-      links: [
-        { label: 'GitHub', url: 'https://github.com/BhavyaV29/Gator' }
-      ]
-    },
-    {
-      title: 'AI Agent CLI',
-      subtitle: 'Python CLI Tool',
-      description: 'A Python-based AI agent that analyzes, modifies, and executes Python code using a plan–act–observe loop and Gemini API.',
-      tech: ['Python', 'Gemini API'],
-      links: [
-        { label: 'GitHub', url: 'https://github.com/BhavyaV29/CLI-Agent' }
-      ]
+      subtitle: 'CLI RSS Aggregator · Go',
+      description:
+        'A terminal RSS aggregator with per-user feeds and a long-running worker that fetches the least-recently-updated feed on a ticker. PostgreSQL storage with a type-safe SQLC layer and Goose migrations.',
+      tech: ['Go', 'PostgreSQL', 'SQLC', 'Goose'],
+      links: [{ label: 'GitHub', url: 'https://github.com/BhavyaV29/Gator' }],
     },
     {
       title: 'Smart Food Waste Management System',
-      subtitle: 'ML System',
-      description: 'Raspberry Pi–based ML system using a load cell, dual cameras, HOG face recognition, and a YOLOv11 food detection model to identify users and estimate food waste.',
-      tech: ['Raspberry Pi', 'Python', 'YOLOv11', 'HOG'],
-      links: [
-        
-      ]
-    }
+      subtitle: 'Applied ML · Raspberry Pi',
+      description:
+        'A Raspberry Pi system that identifies users and estimates food waste using a load cell, dual cameras, HOG face recognition, and a YOLOv11 food-detection model.',
+      tech: ['Python', 'YOLOv11', 'OpenCV', 'Raspberry Pi'],
+      links: [],
+    },
   ]
 
   return (
@@ -68,19 +64,21 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-3 pt-4">
-                  {project.links.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-primary hover:underline"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
+                {project.links.length > 0 && (
+                  <div className="flex gap-3 pt-4">
+                    {project.links.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-primary hover:underline"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           ))}

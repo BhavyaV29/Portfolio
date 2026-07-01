@@ -25,6 +25,14 @@ export default function Header() {
             Home
           </button>
           <button
+            onClick={() => scrollToSection('about')}
+            className={`text-sm transition-colors ${
+              activeSection === 'about' ? 'text-foreground font-medium' : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            About
+          </button>
+          <button
             onClick={() => scrollToSection('skills')}
             className={`text-sm transition-colors ${
               activeSection === 'skills' ? 'text-foreground font-medium' : 'text-muted-foreground hover:text-foreground'

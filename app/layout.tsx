@@ -3,13 +3,45 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geist = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
+const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
+
+const title = 'Bhavya Vashisht — Backend & Systems Engineer'
+const description =
+  'Backend & systems engineer building APIs, CLIs, and developer tooling in Go and Python, backed by PostgreSQL, Redis, and MongoDB.'
 
 export const metadata: Metadata = {
-  title: 'Bhavya Vashisht - Backend, Systems & ML Engineer',
-  description: 'Backend, Systems & Machine Learning Engineer. Building scalable backend services, CLI tools, AI agents, and embedded ML systems.',
-  generator: 'v0.app',
+  metadataBase: new URL('https://bhavyaportfolio.site'),
+  title,
+  description,
+  keywords: [
+    'Bhavya Vashisht',
+    'Backend Engineer',
+    'Systems Engineer',
+    'Software Engineer',
+    'Go',
+    'Golang',
+    'Python',
+    'PostgreSQL',
+    'Redis',
+    'REST APIs',
+  ],
+  authors: [{ name: 'Bhavya Vashisht', url: 'https://github.com/BhavyaV29' }],
+  creator: 'Bhavya Vashisht',
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    url: 'https://bhavyaportfolio.site',
+    siteName: 'Bhavya Vashisht',
+    title,
+    description:
+      'I build APIs, CLIs, and developer tooling in Go and Python. See my projects and get in touch.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+  },
   icons: {
     icon: [
       {
@@ -36,7 +68,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

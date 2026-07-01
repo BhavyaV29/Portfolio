@@ -1,17 +1,24 @@
 export default function About() {
   return (
-    <section id="about" className="py-24 border-b border-border">
-      <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-12">About Me</h2>
+    <section id="about" className="py-24 border-b border-border px-6">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-4xl font-bold mb-12 text-balance">About</h2>
         <div className="space-y-6 text-lg text-muted-foreground leading-relaxed max-w-3xl">
           <p>
-            I'm a full-stack developer with a passion for creating elegant solutions to complex problems. With expertise in both frontend and backend technologies, I build applications that are not only functional but also delightful to use.
+            I'm a backend &amp; systems engineer who likes building things that run
+            reliably — REST APIs, command-line tools, and the data layers behind
+            them. Most of my work is in Go and Python, backed by PostgreSQL, Redis,
+            and MongoDB.
           </p>
           <p>
-            My journey in tech started with a curiosity about how things work. Over the years, I've worked with various technologies and teams, learning that great software comes from understanding user needs and writing maintainable code.
+            I care about correctness under concurrency, clean API design, and code
+            that's easy to reason about months later. Lately I've been going deeper
+            on applied AI — LLM tooling and agent workflows — and on the
+            infrastructure that keeps backend services healthy.
           </p>
           <p>
-            When I'm not coding, you'll find me exploring new technologies, contributing to open source, or sharing knowledge with the community. I believe in lifelong learning and staying updated with industry trends.
+            The projects below are things I've built to learn by doing. Always happy
+            to talk backend, Go, or systems work.
           </p>
         </div>
       </div>

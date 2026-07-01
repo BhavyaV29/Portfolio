@@ -8,14 +8,17 @@ export default function Hero() {
           BHAVYA VASHISHT
         </h1>
         <p className="text-2xl md:text-3xl font-light text-muted-foreground text-balance">
-          Backend, Systems & Machine Learning Engineer
+          Backend &amp; Systems Engineer
         </p>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed">
-          I build scalable backend services, CLI tools, AI agents, and ML systems.
+          I build APIs, CLIs, and developer tooling in Go and Python — with a
+          growing focus on applied AI and ML systems.
         </p>
         <div className="flex gap-4 justify-center pt-8 flex-wrap">
           <a
             href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
           >
             Download Resume
