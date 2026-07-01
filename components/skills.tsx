@@ -1,45 +1,56 @@
 import { Code2, Database, Wrench } from 'lucide-react'
 
-export default function Skills() {
-  const groups = [
-    { icon: Code2, category: 'Languages', items: ['Go', 'Python', 'C', 'SQL'] },
-    {
-      icon: Database,
-      category: 'Backend & Data',
-      items: ['REST APIs', 'PostgreSQL', 'Redis', 'MongoDB', 'SQLC', 'Goose', 'FastAPI', 'JWT', 'bcrypt'],
-    },
-    { icon: Wrench, category: 'Infra & Tools', items: ['Docker', 'Kubernetes', 'Linux', 'Git'] },
-  ]
+const groups = [
+  {
+    name: 'languages/',
+    icon: Code2,
+    items: ['Go', 'Python', 'C', 'SQL', 'Bash'],
+  },
+  {
+    name: 'backend-data/',
+    icon: Database,
+    items: ['REST APIs', 'PostgreSQL', 'Redis', 'MongoDB', 'SQLC', 'JWT / Auth'],
+  },
+  {
+    name: 'infra-tools/',
+    icon: Wrench,
+    items: ['Docker', 'Kubernetes', 'Linux', 'Git', 'CI/CD', 'LLM tooling'],
+  },
+]
 
+export default function Skills() {
   return (
     <section id="skills" className="py-28 border-b border-border px-6">
-      <div className="max-w-6xl mx-auto">
-        <p className="font-mono text-sm text-primary mb-3">// skills</p>
-        <h2 className="text-4xl font-bold mb-12 text-balance">Tools I work with</h2>
+      <div className="max-w-5xl mx-auto">
+        <p className="text-sm text-primary mb-2">$ ls skills/</p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10">Skills</h2>
         <div className="grid md:grid-cols-3 gap-6">
-          {groups.map((group) => (
-            <div
-              key={group.category}
-              className="card-glow rounded-xl border border-border bg-card/40 p-6"
-            >
-              <div className="flex items-center gap-3 mb-5">
-                <span className="grid place-items-center h-9 w-9 rounded-lg bg-primary/15 text-primary">
-                  <group.icon className="h-5 w-5" />
-                </span>
-                <h3 className="font-semibold">{group.category}</h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {group.items.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-sm px-3 py-1 rounded-md border border-border bg-secondary/40 text-secondary-foreground hover:border-primary/50 hover:text-foreground transition-colors"
-                  >
-                    {skill}
+          {groups.map((group) => {
+            const Icon = group.icon
+            return (
+              <div
+                key={group.name}
+                className="card-glow rounded-lg border border-border bg-card/50 p-6"
+              >
+                <div className="flex items-center gap-2 mb-5">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-md bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" />
                   </span>
-                ))}
+                  <h3 className="text-primary font-medium">{group.name}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-md border border-border bg-secondary/40 px-3 py-1 text-sm text-foreground/90 transition-colors hover:border-primary/50 hover:text-primary"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

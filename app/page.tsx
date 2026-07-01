@@ -9,7 +9,8 @@ import Reveal from '@/components/reveal'
 
 export default function Home() {
   return (
-    <main className="bg-background text-foreground">
+    <main className="relative bg-background text-foreground">
+      <div className="scanlines" aria-hidden />
       <Header />
       <Hero />
       <Reveal>

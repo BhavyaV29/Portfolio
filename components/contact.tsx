@@ -42,13 +42,13 @@ export default function Contact() {
   }
 
   const inputClass =
-    'w-full px-4 py-3 bg-input/60 text-foreground placeholder-muted-foreground rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-shadow'
+    'w-full px-4 py-3 bg-input/60 text-foreground placeholder-muted-foreground rounded-md border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-shadow'
 
   return (
     <section id="contact" className="py-28 px-6">
       <div className="max-w-5xl mx-auto">
-        <p className="font-mono text-sm text-primary mb-3 text-center">// contact</p>
-        <h2 className="text-4xl font-bold mb-4 text-balance text-center">Let's build something</h2>
+        <p className="text-sm text-primary mb-2 text-center">$ ./contact.sh</p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance text-center">Contact</h2>
         <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
           Open to backend &amp; applied-AI roles and interesting collaborations. The
           fastest way to reach me is email.
@@ -58,23 +58,23 @@ export default function Contact() {
           <div className="space-y-4">
             <a
               href="mailto:bhavyavashisht119@gmail.com"
-              className="card-glow flex items-center gap-4 rounded-xl border border-border bg-card/40 p-5"
+              className="card-glow flex items-center gap-4 rounded-lg border border-border bg-card/50 p-5"
             >
-              <span className="grid place-items-center h-11 w-11 rounded-lg bg-primary/15 text-primary">
+              <span className="grid place-items-center h-11 w-11 rounded-md bg-primary/15 text-primary">
                 <Mail className="h-5 w-5" />
               </span>
               <div>
-                <p className="text-xs uppercase tracking-wide text-muted-foreground">Email</p>
+                <p className="text-xs text-muted-foreground">email</p>
                 <p className="text-foreground">bhavyavashisht119@gmail.com</p>
               </div>
             </a>
 
-            <div className="flex items-center gap-4 rounded-xl border border-border bg-card/40 p-5">
-              <span className="grid place-items-center h-11 w-11 rounded-lg bg-primary/15 text-primary">
+            <div className="flex items-center gap-4 rounded-lg border border-border bg-card/50 p-5">
+              <span className="grid place-items-center h-11 w-11 rounded-md bg-primary/15 text-primary">
                 <MapPin className="h-5 w-5" />
               </span>
               <div>
-                <p className="text-xs uppercase tracking-wide text-muted-foreground">Location</p>
+                <p className="text-xs text-muted-foreground">location</p>
                 <p className="text-foreground">Delhi NCR, India</p>
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="card-glow grid place-items-center h-12 flex-1 rounded-xl border border-border bg-card/40 text-muted-foreground hover:text-foreground"
+                className="card-glow grid place-items-center h-12 flex-1 rounded-lg border border-border bg-card/50 text-muted-foreground hover:text-primary"
               >
                 <Github className="h-5 w-5" />
               </a>
@@ -94,57 +94,62 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="card-glow grid place-items-center h-12 flex-1 rounded-xl border border-border bg-card/40 text-muted-foreground hover:text-foreground"
+                className="card-glow grid place-items-center h-12 flex-1 rounded-lg border border-border bg-card/50 text-muted-foreground hover:text-primary"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-4 rounded-xl border border-border bg-card/40 p-6"
-          >
-            <input
-              type="text"
-              name="name"
-              placeholder="Your name"
-              value={formData.name}
-              onChange={handleChange}
-              className={inputClass}
-              required
-              disabled={loading}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              value={formData.email}
-              onChange={handleChange}
-              className={inputClass}
-              required
-              disabled={loading}
-            />
-            <textarea
-              name="message"
-              placeholder="Your message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={5}
-              className={inputClass}
-              required
-              disabled={loading}
-            />
-            {error && <p className="text-destructive text-sm">{error}</p>}
-            <button
-              type="submit"
-              className="inline-flex w-full items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:brightness-110 transition-all font-medium disabled:opacity-50"
-              disabled={loading}
-            >
-              <Send className="h-4 w-4" />
-              {loading ? 'Sending...' : submitted ? 'Message sent!' : 'Send message'}
-            </button>
-          </form>
+          <div className="overflow-hidden rounded-lg border border-border bg-card/50">
+            <div className="flex items-center gap-2 border-b border-border bg-secondary/40 px-4 py-2.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-destructive/70" />
+              <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/70" />
+              <span className="h-2.5 w-2.5 rounded-full bg-primary/70" />
+              <span className="ml-2 text-xs text-muted-foreground">~/contact — new message</span>
+            </div>
+            <form onSubmit={handleSubmit} className="space-y-4 p-6">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                value={formData.name}
+                onChange={handleChange}
+                className={inputClass}
+                required
+                disabled={loading}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                value={formData.email}
+                onChange={handleChange}
+                className={inputClass}
+                required
+                disabled={loading}
+              />
+              <textarea
+                name="message"
+                placeholder="Your message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={5}
+                className={inputClass}
+                required
+                disabled={loading}
+              />
+              {error && <p className="text-destructive text-sm">{error}</p>}
+              <button
+                type="submit"
+                className="inline-flex w-full items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-md hover:brightness-110 transition-all font-medium disabled:opacity-50"
+                disabled={loading}
+              >
+                <Send className="h-4 w-4" />
+                {loading ? 'sending...' : submitted ? 'message sent!' : '$ send'}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>

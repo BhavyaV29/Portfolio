@@ -17,17 +17,26 @@ export default function Reveal({
   useEffect(() => {
     const el = ref.current
     if (!el) return
+
+    // Safety net: never leave content hidden even if the observer misfires.
+    const fallback = setTimeout(() => setShown(true), 1600)
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setShown(true)
           observer.disconnect()
+          clearTimeout(fallback)
         }
       },
-      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+      { threshold: 0.1, rootMargin: '0px 0px -8% 0px' },
     )
     observer.observe(el)
-    return () => observer.disconnect()
+
+    return () => {
+      observer.disconnect()
+      clearTimeout(fallback)
+    }
   }, [])
 
   return (

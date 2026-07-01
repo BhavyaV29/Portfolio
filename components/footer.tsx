@@ -20,16 +20,16 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={l.label}
-              className="grid place-items-center h-10 w-10 rounded-lg border border-border text-muted-foreground transition-colors hover:text-foreground hover:border-foreground/40"
+              className="grid place-items-center h-10 w-10 rounded-md border border-border text-muted-foreground transition-colors hover:text-primary hover:border-primary/50"
             >
               <l.icon className="h-4 w-4" />
             </a>
           ))}
         </div>
-        <p className="text-muted-foreground text-sm">
-          © {currentYear} Bhavya Vashisht — Backend &amp; Systems Engineer
+        <p className="text-sm text-muted-foreground">
+          <span className="text-primary/70"># </span>© {currentYear} Bhavya Vashisht — Backend &amp; Systems Engineer
         </p>
-        <p className="text-xs text-muted-foreground/70">Built with Next.js &amp; Tailwind CSS</p>
+        <p className="text-xs text-muted-foreground/70">$ built with next.js &amp; tailwind css</p>
       </div>
     </footer>
   )

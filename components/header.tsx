@@ -4,11 +4,10 @@ import { useEffect, useState } from 'react'
 import { FileText } from 'lucide-react'
 
 const sections = [
-  { id: 'hero', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'about', label: './about' },
+  { id: 'skills', label: './skills' },
+  { id: 'projects', label: './projects' },
+  { id: 'contact', label: './contact' },
 ]
 
 export default function Header() {
@@ -16,12 +15,13 @@ export default function Header() {
 
   useEffect(() => {
     const observers: IntersectionObserver[] = []
-    sections.forEach((s) => {
-      const el = document.getElementById(s.id)
+    const ids = ['hero', ...sections.map((s) => s.id)]
+    ids.forEach((id) => {
+      const el = document.getElementById(id)
       if (!el) return
       const observer = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(s.id)
+          if (entry.isIntersecting) setActiveSection(id)
         },
         { rootMargin: '-45% 0px -50% 0px', threshold: 0 },
       )
@@ -40,19 +40,22 @@ export default function Header() {
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <button
           onClick={() => scrollToSection('hero')}
-          className="text-lg font-semibold tracking-tight"
+          className="text-sm font-semibold tracking-tight"
         >
-          BV<span className="text-primary">.</span>
+          <span className="text-primary">bhavya</span>
+          <span className="text-muted-foreground">@dev</span>
+          <span className="text-muted-foreground">:~$</span>
+          <span className="cursor-blink text-primary"> ▋</span>
         </button>
 
-        <div className="hidden sm:flex items-center gap-7">
+        <div className="hidden sm:flex items-center gap-6">
           {sections.map((s) => (
             <button
               key={s.id}
               onClick={() => scrollToSection(s.id)}
               className={`text-sm transition-colors ${
                 activeSection === s.id
-                  ? 'text-foreground font-medium'
+                  ? 'text-primary'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
             >
@@ -65,9 +68,9 @@ export default function Header() {
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3.5 py-1.5 text-sm font-medium transition-colors hover:border-foreground/40 hover:bg-card/60"
+          className="inline-flex items-center gap-1.5 rounded-md border border-primary/40 px-3.5 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
         >
-          <FileText className="h-3.5 w-3.5" /> Resume
+          <FileText className="h-3.5 w-3.5" /> resume
         </a>
       </nav>
     </header>
