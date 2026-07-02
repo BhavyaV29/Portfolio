@@ -25,9 +25,9 @@ export default function TerminalIntro() {
   return (
     <div className="mx-auto w-full max-w-xl overflow-hidden rounded-lg border border-border bg-card/70 text-left shadow-2xl shadow-black/40 backdrop-blur">
       <div className="flex items-center gap-2 border-b border-border bg-secondary/40 px-4 py-2.5">
-        <span className="h-3 w-3 rounded-full bg-destructive/80" />
-        <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
-        <span className="h-3 w-3 rounded-full bg-primary/80" />
+        <span className="h-3 w-3 rounded-full bg-muted-foreground/70" />
+        <span className="h-3 w-3 rounded-full bg-muted-foreground/45" />
+        <span className="h-3 w-3 rounded-full bg-muted-foreground/25" />
         <span className="ml-2 text-xs text-muted-foreground">bash — bhavya@portfolio</span>
       </div>
       <div className="space-y-1.5 p-5 text-sm leading-relaxed">

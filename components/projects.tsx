@@ -1,4 +1,4 @@
-import { Server, Bot, Rss, Cpu, Github, ArrowUpRight } from 'lucide-react'
+import { Workflow, Server, Bot, Rss, Cpu, Github, ArrowUpRight } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 type Project = {
@@ -14,6 +14,17 @@ type Project = {
 
 export default function Projects() {
   const projects: Project[] = [
+    {
+      icon: Workflow,
+      title: 'JobOps Pipeline',
+      repo: '~/job-hunter-pipeline',
+      subtitle: 'Job Sourcing + Outreach · Python',
+      featured: true,
+      description:
+        'A daily job-ops pipeline (~8.6k LOC): parallel async fetch across 15+ job boards and ATS APIs, fresher/geo/salary filters, tiered scoring, and optional LLM JD enrichment into a bidirectional Google Sheets tracker — then contact lookup with cold-mail and referral drafts for review (never auto-sends).',
+      tech: ['Python', 'asyncio', 'httpx', 'LLM APIs', 'Google Sheets API', 'Playwright'],
+      url: 'https://github.com/BhavyaV29/job-hunter-pipeline',
+    },
     {
       icon: Server,
       title: 'Chirpy',
@@ -72,9 +83,9 @@ export default function Projects() {
             >
               {/* terminal title bar */}
               <div className="flex items-center gap-2 border-b border-border bg-secondary/40 px-4 py-2.5">
-                <span className="h-2.5 w-2.5 rounded-full bg-destructive/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-primary/70" />
+                <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/70" />
+                <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/45" />
+                <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/25" />
                 <span className="ml-2 text-xs text-muted-foreground">{project.repo}</span>
                 {project.featured && (
                   <span className="ml-auto text-xs text-primary">★ featured</span>
