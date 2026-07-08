@@ -1,4 +1,4 @@
-import { Workflow, Server, Bot, Rss, Cpu, Github, ArrowUpRight } from 'lucide-react'
+import { Workflow, Server, Bot, Rss, Cpu, ShieldCheck, Github, ArrowUpRight } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 type Project = {
@@ -14,6 +14,18 @@ type Project = {
 
 export default function Projects() {
   const projects: Project[] = [
+    {
+      icon: ShieldCheck,
+      title: 'Deputy',
+      repo: '~/deputy-agent',
+      subtitle: 'On-Device AI Agent · Python',
+      featured: true,
+      description:
+        'A private, on-device AI agent that works your own files and runs tasks — and asks before it acts. A bounded ReAct loop with constrained decoding lifts end-to-end task success 29% → 88% on qwen2.5:3b (schema-valid steps 71% → 100%), with tools via MCP, on-device RAG (sqlite-vec + Ollama embeddings), and a trust surface — approval gates on writes, an append-only audit log, and local-first routing with opt-in cloud.',
+      tech: ['Python', 'Ollama', 'MCP', 'sqlite-vec', 'RAG', 'FastAPI'],
+      url: 'https://github.com/BhavyaV29/deputy-agent',
+      // TODO: add hosted web-demo link once the Render URL is confirmed
+    },
     {
       icon: Workflow,
       title: 'JobOps Pipeline',
