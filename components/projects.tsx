@@ -46,8 +46,8 @@ export default function Projects() {
       subtitle: 'Backend REST API · Go',
       featured: true,
       description:
-        'A production-style microblogging API in Go: JWT auth with refresh-token rotation, bcrypt-hashed passwords, a type-safe SQLC data layer over PostgreSQL, Goose migrations, and a Polka webhook for premium upgrades.',
-      tech: ['Go', 'PostgreSQL', 'SQLC', 'JWT', 'bcrypt', 'Webhooks'],
+        'A production-style microblogging API in Go: JWT auth with refresh-token rotation, Argon2id-hashed passwords, a type-safe SQLC data layer over PostgreSQL, Goose migrations, and a Polka webhook for premium upgrades.',
+      tech: ['Go', 'PostgreSQL', 'SQLC', 'JWT', 'Argon2id', 'Webhooks'],
       url: 'https://github.com/BhavyaV29/chirpy',
     },
     {
