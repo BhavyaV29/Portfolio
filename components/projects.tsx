@@ -1,4 +1,4 @@
-import { Workflow, Server, Bot, Rss, Cpu, ShieldCheck, Github, ArrowUpRight } from 'lucide-react'
+import { Workflow, Server, Bot, Rss, Cpu, ShieldCheck, Github, Globe, ArrowUpRight } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 type Project = {
@@ -9,6 +9,7 @@ type Project = {
   description: string
   tech: string[]
   url: string | null
+  demo?: string
   featured?: boolean
 }
 
@@ -24,7 +25,7 @@ export default function Projects() {
         'A private, on-device AI agent that works your own files and runs tasks — and asks before it acts. A bounded ReAct loop with constrained decoding lifts end-to-end task success 29% → 88% on qwen2.5:3b (schema-valid steps 71% → 100%), with tools via MCP, on-device RAG (sqlite-vec + Ollama embeddings), and a trust surface — approval gates on writes, an append-only audit log, and local-first routing with opt-in cloud.',
       tech: ['Python', 'Ollama', 'MCP', 'sqlite-vec', 'RAG', 'FastAPI'],
       url: 'https://github.com/BhavyaV29/deputy-agent',
-      // TODO: add hosted web-demo link once the Render URL is confirmed
+      demo: 'https://deputy-web-demo.onrender.com',
     },
     {
       icon: Workflow,
@@ -36,6 +37,7 @@ export default function Projects() {
         'A daily job-ops pipeline (~8.6k LOC): parallel async fetch across 15+ job boards and ATS APIs, fresher/geo/salary filters, tiered scoring, and optional LLM JD enrichment into a bidirectional Google Sheets tracker — then contact lookup with cold-mail and referral drafts for review (never auto-sends).',
       tech: ['Python', 'asyncio', 'httpx', 'LLM APIs', 'Google Sheets API', 'Playwright'],
       url: 'https://github.com/BhavyaV29/job-hunter-pipeline',
+      demo: 'https://job-hunter-pipeline.onrender.com',
     },
     {
       icon: Server,
@@ -131,7 +133,18 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="mt-auto pt-5">
+                <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-5">
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-all hover:gap-2.5"
+                    >
+                      <Globe className="h-4 w-4" /> $ open demo
+                      <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  )}
                   {project.url ? (
                     <a
                       href={project.url}
