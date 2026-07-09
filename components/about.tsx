@@ -14,9 +14,9 @@ export default function About() {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              I'm a backend &amp; systems engineer who likes building things that run
-              reliably — REST APIs, command-line tools, and the data layers behind
-              them. Most of my work is in <span className="text-primary">Go</span> and{' '}
+              I'm a backend &amp; systems engineer, increasingly focused on AI/ML-platform
+              work, who likes building things that run reliably — REST APIs, command-line
+              tools, and the data layers behind them. Most of my work is in <span className="text-primary">Go</span> and{' '}
               <span className="text-primary">Python</span>, backed by PostgreSQL,
               Redis, and MongoDB.
             </p>
@@ -27,8 +27,9 @@ export default function About() {
               that keeps backend services healthy.
             </p>
             <p>
-              The projects below are things I've built to learn by doing. Always happy
-              to talk backend, Go, or systems work.
+              The projects below are things I've built to learn by doing — two of them,
+              Deputy and JobOps Pipeline, are shipped and live with in-browser demos you
+              can try. Always happy to talk backend, Go, or systems work.
             </p>
           </div>
           <div className="h-fit rounded-lg border border-border bg-card/50 p-5 text-sm">
