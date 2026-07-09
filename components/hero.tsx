@@ -33,7 +33,7 @@ export default function Hero() {
             Bhavya Vashisht
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground text-balance">
-            Backend &amp; Systems Engineer — Go · Python
+            Backend &amp; ML-Platform Engineer — Go · Python
           </p>
         </div>
 

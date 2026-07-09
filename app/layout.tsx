@@ -6,9 +6,9 @@ import './globals.css'
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
 
-const title = 'Bhavya Vashisht — Backend & Systems Engineer'
+const title = 'Bhavya Vashisht — Backend & ML-Platform Engineer'
 const description =
-  'Backend & systems engineer building APIs, CLIs, and developer tooling in Go and Python, backed by PostgreSQL, Redis, and MongoDB.'
+  'Backend & ML-platform engineer building APIs, CLIs, and developer tooling in Go and Python, backed by PostgreSQL, Redis, and MongoDB.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bhavyaportfolio.site'),

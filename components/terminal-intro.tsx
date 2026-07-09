@@ -6,7 +6,7 @@ type Line = { cmd: string; out?: string }
 
 const LINES: Line[] = [
   { cmd: 'whoami', out: 'Bhavya Vashisht' },
-  { cmd: 'cat role.txt', out: 'Backend & Systems Engineer' },
+  { cmd: 'cat role.txt', out: 'Backend & ML-Platform Engineer' },
   { cmd: 'echo $STACK', out: 'Go · Python · PostgreSQL · Redis · Docker' },
   { cmd: 'ls focus/', out: 'apis/   clis/   developer-tooling/   applied-ai/' },
 ]

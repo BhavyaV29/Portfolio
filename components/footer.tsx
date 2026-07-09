@@ -27,7 +27,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="text-sm text-muted-foreground">
-          <span className="text-primary/70"># </span>© {currentYear} Bhavya Vashisht — Backend &amp; Systems Engineer
+          <span className="text-primary/70"># </span>© {currentYear} Bhavya Vashisht — Backend &amp; ML-Platform Engineer
         </p>
         <p className="text-xs text-muted-foreground/70">$ built with next.js &amp; tailwind css</p>
       </div>
