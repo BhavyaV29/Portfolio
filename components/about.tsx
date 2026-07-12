@@ -14,7 +14,7 @@ export default function About() {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              I'm a backend &amp; systems engineer, increasingly focused on AI/ML-platform
+              I&apos;m a backend &amp; systems engineer, increasingly focused on AI/ML-platform
               work, who likes building things that run reliably — REST APIs, command-line
               tools, and the data layers behind them. Most of my work is in <span className="text-primary">Go</span> and{' '}
               <span className="text-primary">Python</span>, backed by PostgreSQL,
@@ -22,18 +22,18 @@ export default function About() {
             </p>
             <p>
               I care about correctness under concurrency, clean API design, and code
-              that's easy to reason about months later. Lately I've been going deeper
+              that&apos;s easy to reason about months later. Lately I&apos;ve been going deeper
               on applied AI — LLM tooling and agent workflows — and the infrastructure
               that keeps backend services healthy.
             </p>
             <p>
-              The projects below are things I've built to learn by doing — two of them,
-              Deputy and JobOps Pipeline, are shipped and live with in-browser demos you
-              can try. Always happy to talk backend, Go, or systems work.
+              The projects below are things I&apos;ve built to learn by doing — Deputy has
+              a browser walkthrough, and JobOps has a live read-only sample dashboard.
+              Always happy to talk backend, Go, or systems work.
             </p>
           </div>
           <div className="h-fit rounded-lg border border-border bg-card/50 p-5 text-sm">
-            <p className="mb-3 text-xs text-muted-foreground">// quick facts</p>
+            <p className="mb-3 text-xs text-muted-foreground">{'// quick facts'}</p>
             {facts.map((f) => (
               <div key={f.k} className="py-1">
                 <span className="text-primary">{f.k}</span>

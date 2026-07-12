@@ -10,6 +10,7 @@ type Project = {
   tech: string[]
   url: string | null
   demo?: string
+  demoLabel?: string
   featured?: boolean
 }
 
@@ -22,10 +23,11 @@ export default function Projects() {
       subtitle: 'On-Device AI Agent · Python',
       featured: true,
       description:
-        'A private, on-device AI agent that works your own files and runs tasks — and asks before it acts. A bounded ReAct loop with constrained decoding lifts end-to-end task success 29% → 88% on qwen2.5:3b (schema-valid steps 71% → 100%), with tools via MCP, on-device RAG (sqlite-vec + Ollama embeddings), and a trust surface — approval gates on writes, an append-only audit log, and local-first routing with opt-in cloud.',
+        'A private, on-device AI agent whose Python/Ollama core uses constrained decoding to lift end-to-end task success 29% → 88% on qwen2.5:3b (schema-valid steps 71% → 100%). It adds MCP tools, on-device RAG, approval gates for writes and external access, and an append-only audit log. The browser link is a scripted walkthrough by default, with optional experimental WebGPU inference.',
       tech: ['Python', 'Ollama', 'MCP', 'sqlite-vec', 'RAG', 'FastAPI'],
       url: 'https://github.com/BhavyaV29/deputy-agent',
       demo: 'https://deputy-web-demo.onrender.com',
+      demoLabel: 'open walkthrough',
     },
     {
       icon: Workflow,
@@ -34,10 +36,11 @@ export default function Projects() {
       subtitle: 'Job Sourcing + Outreach · Python',
       featured: true,
       description:
-        'A daily job-ops pipeline (~8.6k LOC): parallel async fetch across 15+ job boards and ATS APIs, fresher/geo/salary filters, tiered scoring, and optional LLM JD enrichment into a bidirectional Google Sheets tracker — then contact lookup with cold-mail and referral drafts for review (never auto-sends).',
+        'A daily job-ops pipeline with parallel async fetch across 15+ job boards and ATS APIs, fresher/geo/salary filters, tiered scoring, optional LLM JD enrichment, and bidirectional Google Sheets tracking — then contact lookup with review-before-send outreach drafts. The browser link serves read-only sample data.',
       tech: ['Python', 'asyncio', 'httpx', 'LLM APIs', 'Google Sheets API', 'Playwright'],
       url: 'https://github.com/BhavyaV29/job-hunter-pipeline',
       demo: 'https://job-hunter-pipeline.onrender.com',
+      demoLabel: 'open read-only demo',
     },
     {
       icon: Server,
@@ -141,7 +144,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-all hover:gap-2.5"
                     >
-                      <Globe className="h-4 w-4" /> $ open demo
+                      <Globe className="h-4 w-4" /> $ {project.demoLabel ?? 'open demo'}
                       <ArrowUpRight className="h-4 w-4" />
                     </a>
                   )}
