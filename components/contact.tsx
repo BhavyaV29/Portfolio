@@ -95,33 +95,51 @@ export default function Contact() {
               <span className="ml-2 text-xs text-muted-foreground">~/contact — new message</span>
             </div>
             <form onSubmit={handleSubmit} className="space-y-4 p-6">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your name"
-                value={formData.name}
-                onChange={handleChange}
-                className={inputClass}
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your email"
-                value={formData.email}
-                onChange={handleChange}
-                className={inputClass}
-                required
-              />
-              <textarea
-                name="message"
-                placeholder="Your message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={5}
-                className={inputClass}
-                required
-              />
+              <div className="space-y-1.5">
+                <label htmlFor="contact-name" className="block text-xs text-muted-foreground">
+                  &gt; name
+                </label>
+                <input
+                  id="contact-name"
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className={inputClass}
+                  required
+                />
+              </div>
+              <div className="space-y-1.5">
+                <label htmlFor="contact-email" className="block text-xs text-muted-foreground">
+                  &gt; email
+                </label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  name="email"
+                  placeholder="Your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={inputClass}
+                  required
+                />
+              </div>
+              <div className="space-y-1.5">
+                <label htmlFor="contact-message" className="block text-xs text-muted-foreground">
+                  &gt; message
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  placeholder="Your message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={5}
+                  className={inputClass}
+                  required
+                />
+              </div>
               <button
                 type="submit"
                 className="inline-flex w-full items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-md hover:brightness-90 transition-all font-medium"
